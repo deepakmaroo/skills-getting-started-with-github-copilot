@@ -32,16 +32,15 @@
             for (const [name, details] of Object.entries(activities)) {
               const card = document.createElement("div");
               card.className = "activity-card";
-
               card.innerHTML = `
                 <h4>${name}</h4>
                 <p>${details.description}</p>
                 <p><strong>Schedule:</strong> ${details.schedule}</p>
                 <p><strong>Max Participants:</strong> ${details.max_participants}</p>
                 <p><strong>Current Participants:</strong> ${details.participants.length}</p>
-                <div>
+                <div class="participants-section">
                   <strong>Participants:</strong>
-                  <ul>
+                  <ul class="participants-list">                    
                     ${details.participants.map(participant => `<li>${participant}</li>`).join("")}
                   </ul>
                 </div>
